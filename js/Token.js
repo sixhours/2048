@@ -8,8 +8,8 @@ class Token {
 	}
 
 	/** 
-     * Draws new HTML token.
-     */
+	 * Draws new HTML token.
+	 */
 	drawHTMLToken( x, y ) {
 		const token = document.createElement( 'div' );
 		document.getElementById( 'game-board-underlay' ).appendChild( token );
@@ -26,9 +26,9 @@ class Token {
 	}
 
 	/** 
-     * Updates token's value and background color
+	 * Updates token's value and background color
 	 * @param 	{Num} 	Value to update innerText
-     */
+	 */
 	redrawToken( value, callback ) {
 		const token = this.htmlToken;
 		token.style.background = this.tokenColor();
@@ -38,27 +38,27 @@ class Token {
 	}
 
 	/** 
-     * Gets associated htmlToken.
-     * @return  {element}   Html element associated with token object.
-     */
+	 * Gets associated htmlToken.
+	 * @return  {element}   Html element associated with token object.
+	 */
 	get htmlToken() {
 		return document.getElementById( this.id );
 	}
 
 	/** 
-     * Gets a starting value for the token, either 2 or 4, at random
-     * @return  {int}   Value from array
-     */
+	 * Gets a starting value for the token, either 2 or 4, at random
+	 * @return  {int}   Value from array
+	 */
 	get tokenStartingValue() {
 		const startingValues = [2,4];
 		return startingValues[ Math.floor( ( Math.random() * startingValues.length ) ) ];
 	}
 
 	/** 
-     * Move the token to a given space in a given direction
-     * @param 	{Space}		Space object
+	 * Move the token to a given space in a given direction
+	 * @param 	{Space}		Space object
 	 * @param 	{string}	Direction to move (up, down, left, right)
-     */
+	 */
 	move( target, direction ) {
 		let animation;
 		switch ( direction ) {
