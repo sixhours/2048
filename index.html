@@ -11,19 +11,24 @@
 		<!-- 
 			When a player clicks this button, the game will begin
 		-->
-		<button id="begin-game">
+		<button id="begin-game" class="button">
 			Start
 		</button>
 	
 		<!-- 
 			#game-scene: container for entire play area
 			#game-over: container for game over overlay
+			#game-over: container for game win overlay
 			#play-area: container for the board
 		-->
 		<div id="game-scene">
 			<div id="game-over">
-				<div class="sorry">Sorry! Game over.</div>
-				<div id="replay">Restart</div>
+				<h3>Sorry! Game over.</h3>
+				<button id="replay" class="button">Restart</button>
+			</div>
+			<div id="game-win">
+				<h3>You win!</h3>
+				<button id="keep-going" class="button">Keep going</button>
 			</div>
 			<div id="play-area">
 				<div class="stand-container left">
@@ -53,7 +58,8 @@
 					</defs>
 					<rect id="board-back" x="0" y="0" width="320" height="320" mask="url(#mask)" fill-opacity="1" fill="#212636"/>
 				</svg>
-				<div style="clear:both"></div>
+
+				<div class="game-info">Use the arrow keys to combine tiles. Try to get to 2048!</div>
 			</div>
 		</div>
 	</body>

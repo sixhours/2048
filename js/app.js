@@ -21,6 +21,17 @@ if (game.isGameOver) {
 }
 
 /**
+ * Add an event listener to the Replay game button if the game is over
+ */
+if (game.checkForWin) {
+	const keepGoing = document.getElementById('keep-going');
+	keepGoing.addEventListener('click', function () {
+		document.getElementById('game-win').style.display = 'none';
+		document.getElementById('play-area').style.opacity = '1';
+	});
+}
+
+/**
  * Listen for keyboard actions to move tokens
  */
 document.addEventListener('keydown', function (event) {

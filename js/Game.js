@@ -82,6 +82,8 @@ class Game {
 			});
 		}
 
+		this.checkForWin();
+
 		if (this.canMove) {
 			this.newToken();
 			this.board.scoreBox.innerText = this.score;
@@ -178,6 +180,28 @@ class Game {
 			playArea.style.opacity = 0.15;
 			gameOver.style.display = 'block';
 		}
+	}
+
+	/**
+	 * Check all tokens for a 2048 value and display a congrats message
+	 * @return 	true if game has been won
+	 */
+	checkForWin() {
+		const tokens = this.getAllTokens();
+
+		for (let token in tokens) {
+			if (2048 === token.value) {
+				const win = document.getElementById('game-win');
+				const playArea = document.getElementById('play-area');
+
+				playArea.style.opacity = 0.15;
+				win.style.display = 'block';
+
+				return true;
+			}
+		}
+
+		return false;
 	}
 
 	/**
