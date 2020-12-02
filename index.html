@@ -1,82 +1,68 @@
 <html>
-    <head>
-        <meta charset = "UTF-8">
-        <title>2048</title>
-        <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
-        <link rel = "stylesheet" type = "text/css" href = "css/style.css" />
-    </head>
+	<head>
+		<meta charset="UTF-8">
+		<title>2048</title>
+		<link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+	</head>
 
-    <body>
+	<body>
 		
 		<!-- 
-			Start Game Button
 			When a player clicks this button, the game will begin
 		-->
-    	<button id = "begin-game">
-    		Start
-    	</button>
-    
+		<button id="begin-game">
+			Start
+		</button>
 	
 		<!-- 
-            #game-scene: container for entire play area
-            #game-over: container for Game Over overlay
+			#game-scene: container for entire play area
+			#game-over: container for game over overlay
 			#play-area: container for the board
 		-->
-    	<div id = "game-scene">
-            <!--
-                #game-over will eventually display a game over message to the players
-            -->
-            <div id="game-over">
-                <div class='sorry'>Sorry! Game over.</div>
-                <div id='replay'>Restart</div>
-            </div>
-            <div id = "play-area">
-                <div class = "stand-container left">
-                    <div class="score">
-                        <div class="score-heading">Score:</div>
-                        <div id="game-score"></div>
-                    </div>
-                </div>            
-            
+		<div id="game-scene">
+			<div id="game-over">
+				<div class="sorry">Sorry! Game over.</div>
+				<div id="replay">Restart</div>
+			</div>
+			<div id="play-area">
+				<div class="stand-container left">
+					<div class="score">
+						<div class="score-heading">Score:</div>
+						<div id="game-score"></div>
+					</div>
+				</div>
 				<!--
 					#game-board-underlay: container for HTML tokens
 				-->
-                <div id = "game-board-underlay">
-                    <div id = "token" data-column = "0">
-                    </div>
-                </div>
-            
-			
+				<div id="game-board-underlay">
+					<div id="token" data-column="0">
+					</div>
+				</div>
 				<!-- 
 					SVGs were used to create the board and the "holes" for the Spaces
 				-->
-            	<svg id = "game-board">
-                    <defs>
+				<svg id="game-board">
+					<defs>
 						<!--
 							#mask: container for Space SVGs 
 						-->
-                        <mask id="mask" x="0" y="0" width="320" height="320">
-                            <rect x = "0" y = "0" height = "320" width = "320" fill = "white">
-                        </mask>
-                    </defs>
-                    
-                    <rect id = "board-back" x="0" y="0" width="320" height="320" mask="url(#mask)" fill-opacity = "1" fill = "#212636"/>
-            	</svg>        
-                <div style = "clear:both"></div>
-            </div>
-        </div>
-    </body>
+						<mask id="mask" x="0" y="0" width="320" height="320">
+							<rect x="0" y="0" height="320" width="320" fill="white">
+						</mask>
+					</defs>
+					<rect id="board-back" x="0" y="0" width="320" height="320" mask="url(#mask)" fill-opacity="1" fill="#212636"/>
+				</svg>
+				<div style="clear:both"></div>
+			</div>
+		</div>
+	</body>
 </html>
 
-
-    
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-<script src = "js/Game.js"></script>
-<script src = "js/Board.js"></script>
-<script src = "js/Space.js"></script>
-<script src = "js/Token.js"></script>
-<script src = "js/app.js"></script>
-
-
-
+<script src="js/Game.js"></script>
+<script src="js/Board.js"></script>
+<script src="js/Space.js"></script>
+<script src="js/Token.js"></script>
+<script src="js/app.js"></script>
