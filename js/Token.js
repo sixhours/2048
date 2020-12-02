@@ -2,7 +2,6 @@ class Token {
 	constructor(index, value = this.tokenStartingValue) {
 		this.id = `token-${index}`;
 		this.value = value;
-		this.color = this.tokenColor();
 		this.x = null;
 		this.y = null;
 	}
@@ -16,7 +15,6 @@ class Token {
 		token.setAttribute('id', this.id);
 		token.setAttribute('class', 'token');
 		token.setAttribute('val', this.value);
-		token.style.background = this.tokenColor();
 		token.style.left = x * 76 + 37;
 		token.style.top = y * 76 + 37;
 		token.innerText = this.value;
@@ -34,7 +32,6 @@ class Token {
 	 */
 	redrawToken(value, callback) {
 		const token = this.htmlToken;
-		token.style.background = this.tokenColor();
 		token.setAttribute('val', value);
 		token.innerText = value;
 		callback;
@@ -93,48 +90,5 @@ class Token {
 	 */
 	delete() {
 		this.htmlToken.parentElement.removeChild(this.htmlToken);
-	}
-
-	/*
-	 * Set a token's color based on its value
-	 */
-	tokenColor() {
-		switch (this.value) {
-			case 4:
-				return '#9bd668';
-				break;
-			case 8:
-				return '#edcd1a';
-				break;
-			case 16:
-				return '#c0caf7';
-				break;
-			case 32:
-				return '#cc396c';
-				break;
-			case 64:
-				return '#142f7a';
-				break;
-			case 128:
-				return '#9bd668';
-				break;
-			case 256:
-				return '#edcd1a';
-				break;
-			case 512:
-				return '#c0caf7';
-				break;
-			case 1024:
-				return '#cc396c';
-				break;
-			case 2048:
-				return '#142f7a';
-				break;
-			case 4096:
-				return '#9bd668';
-				break;
-			default:
-				return '#142f7a';
-		}
 	}
 }
