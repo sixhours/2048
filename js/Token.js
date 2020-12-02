@@ -71,7 +71,7 @@ class Token {
 				animation = { top: target.y * 76 };
 				break;
 		}
-		$(this.htmlToken).animate(animation, 250, 'easeOutBounce');
+		$(this.htmlToken).animate(animation, 100, 'easeOutBounce');
 	}
 
 	/*
