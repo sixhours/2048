@@ -307,7 +307,8 @@ class Game {
 								const newValue = space2.token.value * 2;
 								space2.token.value = newValue;
 								game.score += newValue;
-								space2.token.redrawToken( newValue, space2.token.merge() );
+								space2.token.redrawToken( newValue );
+								space2.token.merge();
 								space1.token.delete();
 								space1.token = null;
 							}
