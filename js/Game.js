@@ -290,13 +290,13 @@ class Game {
 						if (!game.isSpaceEmpty(space1) && !game.isSpaceEmpty(space2)) {
 							if (game.doTokenValuesMatch(space1.token, space2.token)) {
 								game.canMove = true;
-								const newValue = space1.token.value * 2;
-								space1.token.value = newValue;
+								const newValue = space2.token.value * 2;
+								space2.token.value = newValue;
 								game.score += newValue;
-								space1.token.redrawToken(newValue);
-								space1.token.merge();
-								space2.token.delete();
-								space2.token = null;
+								space2.token.redrawToken(newValue);
+								space2.token.merge();
+								space1.token.delete();
+								space1.token = null;
 							}
 						}
 					}
